@@ -41,6 +41,11 @@ function init(){
 canvas.addEventListener("mouseup",findpath);
 canvas.addEventListener("mousedown",findpath);
 canvas.addEventListener("mousemove",findpath);
+
+//mobile compatability
+canvas.addEventListener("touchstart",findpath);
+canvas.addEventListener("touchend",findpath);
+canvas.addEventListener("touchmove",findpath);
 }
 
 function fitCanvas(){
@@ -62,11 +67,11 @@ function drawPath(){
 }
 
 function findpath(){
-	if (event.type === "mouseup"){
+	if (event.type === "mouseup" || event.type === "touchend" ){
 		//console.log("Mouse is up");
 		isMouseDown = false;
 	}
-	else if (event.type === "mousedown"){
+	else if (event.type === "mousedown" || event.type === "touchstart"){
 		//console.log("Mouse is down");
 		isMouseDown = true;
 
@@ -79,7 +84,7 @@ function findpath(){
 		currY = event.clientY;
 
 	}
-	else if (event.type === "mousemove"){
+	else if (event.type === "mousemove" || event.type === "touchmove"){
 		//console.log("Mouse is move");
 		if(isMouseDown){
 			prevX = currX;
