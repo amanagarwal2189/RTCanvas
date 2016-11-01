@@ -1,0 +1,19 @@
+npm downlaod n install
+
+node .\index.js
+
+node package manager
+npm install express --save
+npm install socket.io --save
+
+express - webservice
+socket.io - socket
+
+
+commit all the files
+heroku login
+heroku create
+
+git push heroku master
+
+sahil Dhanju

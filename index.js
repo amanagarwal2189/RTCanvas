@@ -23,6 +23,12 @@ io.on('connection', function(socket){
 		historyPath.push(msg);
 		socket.broadcast.emit('path',msg);
 	})
+
+	socket.on('clearHistory', function(msg){
+		//console.log(msg);
+		historyPath=[];
+		socket.broadcast.emit('clearHistory',{});
+	})
 });
 
 //this is the resource which is to be fetched

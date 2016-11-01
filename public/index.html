@@ -3,8 +3,12 @@
 	<head>
 		<title>Real time canvas</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+
 	</head>
 	<body>
+		<div id="tools">
+			<button type="button" onclick="clearCanvas()">Clear Canvas</button>
+		</div>
 		<canvas id="canvas"></canvas>
 		<script src = "/socket.io/socket.io.js"></script>
 		<script rel="stylesheet" src="script.js"></script>

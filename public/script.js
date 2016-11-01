@@ -3,7 +3,7 @@ var socket = io();
 	console.log("Connected to server");
 })
 */
-
+var canvas, ctx = null;
 socket.on('historyPath', function(msg){
 	//draw recieved path
 	for (i=0;i<msg.length;i++){
@@ -16,7 +16,12 @@ socket.on('path', function(msg){
 	recievePath(msg);
 });
 
-var canvas, ctx = null;
+socket.on('clearHistory', function(msg){
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+
+
 var prevX, prevY, currX, currY = 0;
 var isMouseDown = false;
 function init(){
@@ -86,7 +91,6 @@ function findpath(){
 	}
 }
 
-
 function recievePath(path){
 	ctx.beginPath();
 	ctx.moveTo(path.px,path.py);
@@ -95,6 +99,11 @@ function recievePath(path){
 	ctx.lineWidth = 3;
 	ctx.stroke();
 	ctx.closePath();
+}
+
+function clearCanvas(){
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	socket.emit("clearHistory", {});
 }
 
 init();
