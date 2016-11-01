@@ -7,7 +7,7 @@ var socket = io();
 socket.on('historyPath', function(msg){
 	//draw recieved path
 	for (i=0;i<msg.length;i++){
-		recievePath(msg);
+		recievePath(msg[i]);
 	}
 });
 
