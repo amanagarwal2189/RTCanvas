@@ -16,10 +16,7 @@ io.on('connection', function(socket){
 	console.log('a user connected');
 
 	// to push history to clients who just joined
-	socket.on('path', function(msg){
-		//console.log(msg);
-		socket.emit('historyPath',historyPath);
-	})
+	socket.emit('historyPath',historyPath);
 	// to broadcast new message what a client has drawn to other connected clients (and not to itself)
 	socket.on('path', function(msg){
 		//console.log(msg);
