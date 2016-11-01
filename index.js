@@ -9,6 +9,7 @@ var historyPath=[];
 
 //only this folder will be public. This is a keyword.. has to be "public"
 app.use(express.static('public'));
+app.set("port", process.env.PORT || "3000");
 
 //connection
 io.on('connection', function(socket){
@@ -40,6 +41,6 @@ app.get("/foo", function(req,res){
 });
 
 //opens a port on your computer and starts a server
-http.listen(3000, function(){
-	console.log("Listening to port 3000");
+http.listen(app.get("port"), function(){
+	console.log("Listening to port");
 });
