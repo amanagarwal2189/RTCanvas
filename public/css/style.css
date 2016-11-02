@@ -1,0 +1,13 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+}
+canvas{
+	position: absolute;
+}
+
+.mouseDown{
+ 	/*cursor: url(/image/pen-cursor.png), auto;*/
+ 	cursor: crosshair;
+}
