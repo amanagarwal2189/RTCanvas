@@ -20,7 +20,7 @@ var connection = mysql.createConnection({
 	database : 'rtcanvas'
 });
 
-connection.connect();
+//connection.connect();
 connection.connect(function(err){
 if(!err) {
     console.log("Database is connected ... nn");    
