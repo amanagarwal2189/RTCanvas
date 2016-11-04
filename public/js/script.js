@@ -97,5 +97,4 @@ function downloadFile(link, filename) {
     link.download = filename;
 }
 
-
 init();

@@ -11,6 +11,25 @@ var historyPath=[];
 app.use(express.static('public'));
 app.set("port", process.env.PORT || "3000");
 
+/*DATABASE Connection*/
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+	host     : 'localhost',
+	user     : 'dev',
+	password : '',
+	database : 'rtcanvas'
+});
+
+connection.connect();
+connection.connect(function(err){
+if(!err) {
+    console.log("Database is connected ... nn");    
+} else {
+    console.log("Error connecting database ... nn");    
+}
+});
+
+
 //connection
 io.on('connection', function(socket){
 	console.log('a user connected');
@@ -47,3 +66,20 @@ app.get("/foo", function(req,res){
 http.listen(app.get("port"), function(){
 	console.log("Listening to port");
 });
+
+app.get("/getSession",function(req,res){
+connection.query('SELECT * from user LIMIT 2', function(err, rows, fields) {
+connection.end();
+  if (!err)
+    console.log('The solution is: ', rows);
+  else
+    console.log('Error while performing Query.');
+  });
+});
+
+/*connection.query('SELECT * from sessions', function(err, rows, fields) {
+	if (!err)
+  		console.log();
+	else
+   		console.log('Error while performing Query.');
+});*/
