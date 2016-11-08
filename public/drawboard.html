@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Real time canvas</title>
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+		<script rel="text/javascript" src="/js/jquery-3.1.1.js"></script>
+
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+  			<div id="tools" class="container-fluid">
+    			<div class="navbar-header">
+      				<a class="navbar-brand" >Toolkit</a>
+    			</div>
+    			<ul class="nav navbar-nav">
+      				<li><button class="btn btn-default" type="button" onclick="clearCanvas()">Clear Canvas</button></li>
+      				<li><a id = "saveFile" href="#">Download</a></li>
+   				 </ul>
+  			</div>
+		</nav>
+		<canvas id="canvas"></canvas>
+		<script src = "/socket.io/socket.io.js"></script>
+		<script rel="stylesheet" src="/js/script.js"></script>
+	</body>
+
+</html>

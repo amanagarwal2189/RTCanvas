@@ -21,14 +21,14 @@ var connection = mysql.createConnection({
 });
 
 /*DATABASE Connection*/
-/*connection.connect();
+//connection.connect();
 connection.connect(function(err){
 if(!err) {
     console.log("Database is connected ... nn");    
 } else {
     console.log("Error connecting database ... nn");    
 }
-});*/
+});
 
 
 //connection
@@ -77,11 +77,3 @@ connection.end();
     console.log('Error while performing Query.');
   });
 });
-
-/*QUERY*/
-/*connection.query('SELECT * from sessions', function(err, rows, fields) {
-	if (!err)
-  		console.log();
-	else
-   		console.log('Error while performing Query.');
-});*/

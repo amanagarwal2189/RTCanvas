@@ -2,26 +2,36 @@
 <html>
 	<head>
 		<title>Real time canvas</title>
-		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/login.css">
 		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
 		<script rel="text/javascript" src="/js/jquery-3.1.1.js"></script>
+		<script rel="text/javascript" src="/js/login.js"></script>
 
 	</head>
 	<body>
-		<nav class="navbar navbar-default">
-  			<div id="tools" class="container-fluid">
-    			<div class="navbar-header">
-      				<a class="navbar-brand" >Toolkit</a>
-    			</div>
-    			<ul class="nav navbar-nav">
-      				<li><button class="btn btn-default" type="button" onclick="clearCanvas()">Clear Canvas</button></li>
-      				<li><a id = "saveFile" href="#">Save</a></li>
-   				 </ul>
-  			</div>
-		</nav>
-		<canvas id="canvas"></canvas>
-		<script src = "/socket.io/socket.io.js"></script>
-		<script rel="stylesheet" src="/js/script.js"></script>
+	  	<div class="wrapper">
+    	<form class="form-signup" onsubmit= "signup(this);">       
+    		<h2 class="form-signin-heading">Create New Session</h2>
+      		<input type="text" class="form-control" id="user_name" placeholder="Your Name" required="" autofocus="" />
+      		<input type="password" class="form-control" id="session_key" placeholder="Create Session Key" required=""/>
+      		<br/>   
+      		Share the session ID and this session key with whomever you want to draw with!
+      		<button class="btn btn-lg btn-primary btn-block" type="submit">Draw!</button>  
+	 		<br/>
+    	</form>
+    	<br/>
+    	<form class="form-signin" onsubmit="signin(this);">       
+    		<h2 class="form-signin-heading">Please login</h2>
+      		<input type="text" class="form-control" id="session_id" placeholder="Session ID" required=""/>
+      		<input type="password" class="form-control" id="session_key" placeholder="Session Key" required=""/>
+      		<br/>   
+      		<button class="btn btn-lg btn-primary btn-block" type="submit">Draw!</button>  
+	 		<br/>
+    	</form>
+    	<form class="form-jlt">
+    		Else play around randomly with others!! 
+      		<a href="/drawboard.html">Drawboard</a>
+    	</form>
+  		</div>
 	</body>
-
 </html>
